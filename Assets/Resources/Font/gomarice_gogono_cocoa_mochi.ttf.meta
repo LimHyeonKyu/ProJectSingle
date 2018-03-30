@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b10d64c3829e34e4d834913c71652f1c
+timeCreated: 1520933045
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gogono Cocoa Mochi
+  fontNames:
+  - Gogono Cocoa Mochi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

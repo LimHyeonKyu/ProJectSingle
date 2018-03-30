@@ -86,23 +86,29 @@ public class BossScript : MonoBehaviour {
                 }
                 break;
             case BOSSSTATE.DEAD:
-                if (c <= 91 && c >= 71)
+                if (c <= 99 && c >= 79)
                 {
                     Instantiate(iTem[0], transform.position, transform.rotation);
                     Instantiate(iTem[0], transform.position, transform.rotation);
+                    Instantiate(iTem[0], transform.position, transform.rotation);
+                }
+                if (c <= 78 && c >= 58)
+                {
+                    Instantiate(iTem[1], transform.position, transform.rotation);
+                    Instantiate(iTem[1], transform.position, transform.rotation);
                     Instantiate(iTem[1], transform.position, transform.rotation);
                 }
-                if (c <= 70 && c >= 50)
+                if (c <= 47 && c >= 27)
                 {
                     Instantiate(iTem[2], transform.position, transform.rotation);
-                    Instantiate(iTem[1], transform.position, transform.rotation);
-                    Instantiate(iTem[1], transform.position, transform.rotation);
+                    Instantiate(iTem[2], transform.position, transform.rotation);
+                    Instantiate(iTem[2], transform.position, transform.rotation);
                 }
-                if (c <= 30 && c >= 20)
+                if(c<=26&& c>=1)
                 {
-                    Instantiate(iTem[2], transform.position, transform.rotation);
-                    Instantiate(iTem[2], transform.position, transform.rotation);
-                    Instantiate(iTem[1], transform.position, transform.rotation);
+                    Instantiate(iTem[3], transform.position, transform.rotation);
+                    Instantiate(iTem[3], transform.position, transform.rotation);
+                    Instantiate(iTem[3], transform.position, transform.rotation);
                 }
                 for (int i = 0; i < coinitem.Length; i++)
                 {
@@ -128,10 +134,13 @@ public class BossScript : MonoBehaviour {
             default:
                 break;
         }
-        if (bossHP < 0)
+        if (bossHP <= 0)
+        {
+            bossState = BOSSSTATE.DEAD;
+        }
+        if(bossHP<0)
         {
             bossHP = 0;
-            bossState = BOSSSTATE.DEAD;
         }
     }
     void OnTriggerEnter(Collider col)

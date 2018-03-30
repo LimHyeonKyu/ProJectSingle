@@ -29,12 +29,18 @@ public class FireScript : MonoBehaviour {
         }
         if(col.gameObject.tag== "HyPerBK")
         {
+            Instantiate(eFFect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        if(col.gameObject.tag=="HyPerBK2")
+        {
+            Instantiate(eFFect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         if(col.gameObject.tag=="PowerBullet")
         {
-            Destroy(gameObject);
             Instantiate(eFFect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }

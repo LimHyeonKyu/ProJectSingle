@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: c322581d494274a4a8bfce7bfea9da5a
-timeCreated: 1521101635
+guid: ebc0cffaf9e99b443ad4c60e217e53d4
+timeCreated: 1521101485
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: charater55_0
-    21300002: charater55_1
-    21300004: charater55_2
-    21300006: charater55_3
-    21300008: charater55_4
-    21300010: charater55_5
+    21300000: charater22_0
+    21300002: charater22_1
+    21300004: charater22_2
+    21300006: charater22_3
+    21300008: charater22_4
+    21300010: charater22_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -84,80 +84,80 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: charater55_0
+      name: charater22_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 126
-        height: 175
+        width: 117
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: charater55_1
+      name: charater22_1
       rect:
         serializedVersion: 2
-        x: 126
+        x: 117
         y: 0
-        width: 115
-        height: 175
+        width: 117
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: charater55_2
+      name: charater22_2
       rect:
         serializedVersion: 2
-        x: 241
+        x: 234
         y: 0
-        width: 121
-        height: 175
+        width: 117
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: charater55_3
+      name: charater22_3
       rect:
         serializedVersion: 2
-        x: 362
+        x: 351
         y: 0
-        width: 128
-        height: 175
+        width: 117
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: charater55_4
+      name: charater22_4
       rect:
         serializedVersion: 2
-        x: 490
+        x: 468
         y: 0
-        width: 135
-        height: 175
+        width: 117
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: charater55_5
+      name: charater22_5
       rect:
         serializedVersion: 2
-        x: 625
+        x: 585
         y: 0
-        width: 131
-        height: 175
+        width: 117
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

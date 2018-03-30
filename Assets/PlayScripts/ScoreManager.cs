@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -19,73 +19,65 @@ public class ScoreManager : MonoBehaviour {
     }
     public int bestScore = 0;
     public int _myScore = 0;
-    public UILabel mySC;
-    public UILabel _coinScore;
+    public GameObject mySC;
+    public GameObject _coinScore;
     public int coinSC = 0;
-    public UILabel _distanceScore;
+    public int coinscore;
+    public GameObject _distanceScore;
     public int disTanceSC;
     public float scoreTM;
     public int totalScore = 0;
-    public bool disScore = true;
-    //public int bestScore
-    //{
-    //    get
-    //    {
-    //        return _bestScore;
-    //    }
-    //}
-    //public int _myScore
-    //{
-    //    get
-    //    {
-    //        return myScore;
-    //    }
-    //    set
-    //    {
-    //        myScore = value;
-    //        if(myScore>_bestScore)
-    //        {
-    //            _bestScore = myScore;
-    //            SaveBestScore();
-    //        }
-    //    }
-    //}
-    public GameObject mainPlayer;
+    public bool disScore = false;
 
 	void Start ()
     {
-        mainPlayer = GameObject.Find("Player1");
-        LoadedBestScore();
+        if (_instance == null)
+            _instance = this;
+        else if (_instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 	
 	
 	void Update ()
     {
-        if(disScore==true)
+        if(Application.loadedLevel==1)
         {
-            scoreTM += Time.deltaTime;
-            if (scoreTM >= 0.01f)
+            _myScore = 0;
+            totalScore = 0;
+            disTanceSC = 0;
+            coinSC = 0;
+            LoadedBestScore();
+        }
+        if (Application.loadedLevel==2)
+        {
+            LoadedBestScore();
+            mySC = GameObject.Find("MainScore");
+            _coinScore = GameObject.Find("CoinScore");
+            _distanceScore = GameObject.Find("DistanceScore");
+            if (disScore == true)
             {
-                scoreTM = 0;
-                disTanceSC += 1;
-                _distanceScore.GetComponent<UILabel>().text = GetThousandCommaText(disTanceSC);
+                scoreTM += Time.deltaTime;
+                if (scoreTM >= 0.01f)
+                {
+                    scoreTM = 0;
+                    disTanceSC += 1;
+                    _distanceScore.GetComponent<UILabel>().text = GetThousandCommaText(disTanceSC);
+                }
             }
-        }
-        MainScore();
-        CoinScore();
-        totalScore = _myScore + disTanceSC;
-        if(totalScore>bestScore)
-        {
-            bestScore = totalScore;
-            SaveBestScore();
-        }
-        if(totalScore<bestScore)
-        {
-            bestScore = bestScore;
-        }
-        if(mainPlayer.GetComponent<PlayerScript>().playerHP<=0)
-        {
-            disScore = false;
+            MainScore();
+            CoinScore();
+            totalScore = _myScore + disTanceSC;
+            if (totalScore > bestScore)
+            {
+                bestScore = totalScore;
+                SaveBestScore();
+            }
+            if (totalScore < bestScore)
+            {
+                bestScore = bestScore;
+            }
+            coinscore = coinSC;
         }
     }
     
@@ -96,15 +88,6 @@ public class ScoreManager : MonoBehaviour {
     public void CoinScore()
     {
         _coinScore.GetComponent<UILabel>().text = coinSC.ToString();
-        SaveCoin();
-    }
-    public  void SaveCoin()
-    {
-        PlayerPrefs.SetInt("CoinCount", coinSC);
-    }
-    public void LoadedCoin()
-    {
-        coinSC = PlayerPrefs.GetInt("CoinCount", coinSC);
     }
     public void SaveBestScore()
     {

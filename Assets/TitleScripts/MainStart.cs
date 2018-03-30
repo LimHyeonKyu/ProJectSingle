@@ -8,6 +8,5 @@ public class MainStart : MonoBehaviour {
     public void MainStartBTN()
     {
         Application.LoadLevel(1);
-        Debug.Log("이동");
     }
 }

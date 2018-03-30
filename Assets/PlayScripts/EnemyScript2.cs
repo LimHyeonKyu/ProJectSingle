@@ -47,6 +47,10 @@ public class EnemyScript2 : MonoBehaviour {
                 {
                     Instantiate(item[2], transform.position, transform.rotation);
                 }
+                if(a<=16&& a>=1)
+                {
+                    Instantiate(item[3], transform.position, transform.rotation);
+                }
                 ScoreManager.instance._myScore += scoreDie;
                 enemyMG.GetComponent<EnemyManager2>().enemyDT = true;
                 int n = Random.Range(0, 2);
@@ -76,8 +80,11 @@ public class EnemyScript2 : MonoBehaviour {
         }
         if (enumHp <= 0)
         {
-            enumHp = 0;
             EnemyDIE();
+        }
+        if(enumHp<0)
+        {
+            enumHp = 0;
         }
         if(enumHp>0)
         {

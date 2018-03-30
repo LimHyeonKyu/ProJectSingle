@@ -17,7 +17,7 @@ public class BossBulletScript : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        if(col.gameObject.tag== "PowerBullet")
+        if(col.gameObject.tag == "PowerBullet")
         {
             Destroy(gameObject);
         }

@@ -49,6 +49,10 @@ public class EnemyScript3 : MonoBehaviour {
                 {
                     Instantiate(iteM[2], transform.position, transform.rotation);
                 }
+                if (b <= 16 && b >= 1)
+                {
+                    Instantiate(iteM[3], transform.position, transform.rotation);
+                }
                 int f = Random.Range(0, 2);
                 if(f>=1)
                 {
@@ -74,10 +78,13 @@ public class EnemyScript3 : MonoBehaviour {
             default:
                 break;
         }
-        if (enemyHp < 0)
+        if (enemyHp <= 0)
+        {
+            EnemyDIE();
+        }
+        if(enemyHp<0)
         {
             enemyHp = 0;
-            EnemyDIE();
         }
         if (enemyHp > 0)
         {

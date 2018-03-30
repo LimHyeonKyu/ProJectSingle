@@ -19,15 +19,18 @@ public class EnemyScript : MonoBehaviour {
     }
 	void Update ()
     {
+        if(enemyHP<0)
+        {
+            enemyHP = 0;
+        }
         hpText.GetComponent<TextMesh>().text = "HP :" + enemyHP.ToString();
         transform.Translate(0, -enemySpeed * Time.deltaTime, 0);
         if (transform.position.y < -1.5f)
         {
             Destroy(gameObject);
         }
-        if (enemyHP<0)
+        if (enemyHP<=0)
         {
-            enemyHP = 0;
             i = Random.Range(0, 100);
             if (i <= 91 && i >= 71)
             {
@@ -40,6 +43,10 @@ public class EnemyScript : MonoBehaviour {
             if (i <= 30 && i >= 20)
             {
                 Instantiate(itemIns[2], transform.position, transform.rotation);
+            }
+            if(i<=16&&i>=0)
+            {
+                Instantiate(itemIns[3], transform.position, transform.rotation);
             }
             int d = Random.Range(0, 2);
             if(d>=1)
@@ -131,6 +138,7 @@ public class EnemyScript : MonoBehaviour {
         }
         if (col.gameObject.tag=="HyPerBK")
         {
+            ScoreManager.instance._myScore += dieScore;
             i = Random.Range(0, 100);
             if (i <= 91 && i >= 71)
             {
@@ -157,6 +165,7 @@ public class EnemyScript : MonoBehaviour {
         }
         if (col.gameObject.tag == "HyPerBK2")
         {
+            ScoreManager.instance._myScore += dieScore;
             i = Random.Range(0, 100);
             if (i <= 91 && i >= 71)
             {
@@ -179,7 +188,6 @@ public class EnemyScript : MonoBehaviour {
             Instantiate(coinItem[0], transform.position, transform.rotation);
             Instantiate(coinItem[0], transform.position, transform.rotation);
             Instantiate(effect, transform.position, transform.rotation);
-            ScoreManager.instance._myScore += dieScore;
             Destroy(gameObject);
         }
     }

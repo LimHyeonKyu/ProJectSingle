@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject powerCount;
     public GameObject bombEFT;
     public GameObject gameOver;
+    public GameObject scoreMG;
     public List<GameObject> playHeart;
     public float coolT;
     public float coolT2;
@@ -39,10 +40,14 @@ public class PlayerScript : MonoBehaviour {
     public PLAYSTATE playState;
     void Start()
     {
-
+        scoreMG = GameObject.Find("ScoreManager");
     }
 	void Update ()
     {
+        if(playerHP>40)
+        {
+            playerHP = 40;
+        }
         powerCount.GetComponent<UILabel>().text = powerCT.ToString();
         switch (playerHP)
         {
@@ -161,7 +166,7 @@ public class PlayerScript : MonoBehaviour {
                 powerShot = false;
                 this.GetComponent<ShakingCamera>().shaking = false;
                 Time.timeScale = 3f;
-                this.GetComponent<PlayerMoving>().playerSpeed = 2f;
+                this.GetComponent<PlayerMoving>().playerSpeed = 1.6f;
                 hyperBK[0].SetActive(true);
                 hyperBK[1].SetActive(true);
                 hyperBK[2].SetActive(true);
@@ -233,7 +238,16 @@ public class PlayerScript : MonoBehaviour {
         }
         if(playerHP<=0)
         {
+            scoreMG.GetComponent<ScoreManager>().disScore = false;
             playState = PLAYSTATE.DEAD;
+        }
+        if(playerHP<0)
+        {
+            playerHP = 0;
+        }
+        if(playerHP>0)
+        {
+            scoreMG.GetComponent<ScoreManager>().disScore = true;
         }
     }
     void OnTriggerEnter(Collider col)
@@ -319,6 +333,10 @@ public class PlayerScript : MonoBehaviour {
         if (col.gameObject.tag == "Topaz")
         {
             ScoreManager.instance.coinSC += 10;
+        }
+        if (col.gameObject.tag == "PowerItem")
+        {
+            powerCT += 1;
         }
     }
     public void PowerShot()

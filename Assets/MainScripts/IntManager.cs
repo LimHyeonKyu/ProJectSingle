@@ -16,8 +16,8 @@ public class IntManager : MonoBehaviour {
             return _insTance;
         }
     }
-    public int character;
-    public int pet;
+    public int character=0;
+    public int pet=0;
     void Start ()
     {
         if (_insTance == null)
@@ -25,6 +25,7 @@ public class IntManager : MonoBehaviour {
         else if (_insTance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+        LoadedInt();
     }
 
     void Update()

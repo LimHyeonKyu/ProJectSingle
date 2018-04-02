@@ -7,13 +7,20 @@ public class BulletManager : MonoBehaviour {
     public GameObject[] bullet;
     public float coolTime;
     public float respawnTime;
+    public int t;
+    
+    void Start()
+    {
+        t = IntManager.insTance.character;
+    }
 	void Update ()
     {
         coolTime += Time.deltaTime;
         if(coolTime>respawnTime)
         {
             coolTime = 0;
-            Instantiate(bullet[0], transform.position, transform.rotation);
+            Instantiate(bullet[t], transform.position, transform.rotation);
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[6]);
         }	
 	}
 }

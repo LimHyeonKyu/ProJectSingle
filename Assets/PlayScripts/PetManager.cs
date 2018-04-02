@@ -6,10 +6,12 @@ public class PetManager : MonoBehaviour {
 
     public GameObject[] petS;
     public GameObject parentObject;
+    public int petint;
 	void Start ()
     {
+        petint = IntManager.insTance.pet;
         parentObject = GameObject.Find("Pet1");
-        petS[0]=Instantiate(petS[0], transform.position, transform.rotation) as GameObject;
-        petS[0].transform.parent = parentObject.transform;
+        petS[petint]=Instantiate(petS[petint], transform.position, transform.rotation) as GameObject;
+        petS[petint].transform.parent = parentObject.transform;
 	}
 }

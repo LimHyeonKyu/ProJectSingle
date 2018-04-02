@@ -66,11 +66,11 @@ public class EnemyManager : MonoBehaviour {
             if(coolTi2>respawnTi2)
             {
                 coolTi2 = 0;
-                enemyObj[0].GetComponent<EnemyScript>().enemySpeed += 0.1f;
-                enemyObj[1].GetComponent<EnemyScript>().enemySpeed += 0.1f;
-                enemyObj[2].GetComponent<EnemyScript>().enemySpeed += 0.15f;
-                enemyObj[3].GetComponent<EnemyScript>().enemySpeed += 0.1f;
-                enemyObj[4].GetComponent<EnemyScript>().enemySpeed += 0.1f;
+                enemyObj[0].GetComponent<EnemyScript>().enemySpeed += 0.05f;
+                enemyObj[1].GetComponent<EnemyScript>().enemySpeed += 0.05f;
+                enemyObj[2].GetComponent<EnemyScript>().enemySpeed += 0.02f;
+                enemyObj[3].GetComponent<EnemyScript>().enemySpeed += 0.05f;
+                enemyObj[4].GetComponent<EnemyScript>().enemySpeed += 0.05f;
             }
         }
         if(enumDT==false)

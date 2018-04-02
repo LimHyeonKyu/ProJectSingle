@@ -13,9 +13,12 @@ public class EnemyScript : MonoBehaviour {
     private int i;
     public GameObject hpText;
     public GameObject effect;
+    public GameObject playerObj;
+    public GameObject petObj;
     void Start()
     {
-
+        playerObj = GameObject.Find("Player1");
+        petObj = GameObject.Find("Pet1");
     }
 	void Update ()
     {
@@ -68,76 +71,91 @@ public class EnemyScript : MonoBehaviour {
         }
         if (col.gameObject.tag == "Bullet")
         {
-            enemyHP -= 15;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Bullet2")
         {
-            enemyHP -= 20;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Bullet3")
         {
-            enemyHP -= 15;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Bullet4")
         {
-            enemyHP -= 25;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Bullet5")
         {
-            enemyHP -= 25;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Bullet6")
         {
-            enemyHP -= 30;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Bullet7")
         {
-            enemyHP -= 35;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= playerObj.GetComponent<PlayerScript>().playerDM;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PetBullet")
         {
-            enemyHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= petObj.GetComponent<PetDamage>().damage;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PetBullet2")
         {
-            enemyHP -= 15;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= petObj.GetComponent<PetDamage>().damage;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PetBullet3")
         {
-            enemyHP -= 8.5f;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= petObj.GetComponent<PetDamage>().damage;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PetBullet4")
         {
-            enemyHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= petObj.GetComponent<PetDamage>().damage;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PetBullet5")
         {
-            enemyHP -= 20;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= petObj.GetComponent<PetDamage>().damage;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PetBullet6")
         {
-            enemyHP -= 25;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
+            enemyHP -= petObj.GetComponent<PetDamage>().damage;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "PowerBullet")
         {
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             enemyHP -= 40;
             Instantiate(effect, transform.position, transform.rotation);
         }
         if (col.gameObject.tag=="HyPerBK")
         {
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[0]);
             ScoreManager.instance._myScore += dieScore;
             i = Random.Range(0, 100);
             if (i <= 91 && i >= 71)
@@ -165,6 +183,7 @@ public class EnemyScript : MonoBehaviour {
         }
         if (col.gameObject.tag == "HyPerBK2")
         {
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[0]);
             ScoreManager.instance._myScore += dieScore;
             i = Random.Range(0, 100);
             if (i <= 91 && i >= 71)

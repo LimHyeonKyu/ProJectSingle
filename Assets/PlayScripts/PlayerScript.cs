@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour {
 
     public int playerHP;
+    public int playerDM;
     public int powerCT = 0;
     public GameObject[] bulletMG;
     public GameObject[] bosst;
@@ -40,6 +41,41 @@ public class PlayerScript : MonoBehaviour {
     public PLAYSTATE playState;
     void Start()
     {
+        if(IntManager.insTance.character==0)
+        {
+            playerHP = 20;
+            playerDM = 15;
+        }
+        if (IntManager.insTance.character == 1)
+        {
+            playerHP = 20;
+            playerDM = 20;
+        }
+        if (IntManager.insTance.character == 2)
+        {
+            playerHP = 30;
+            playerDM = 15;
+        }
+        if (IntManager.insTance.character == 3)
+        {
+            playerHP = 30;
+            playerDM = 25;
+        }
+        if (IntManager.insTance.character == 4)
+        {
+            playerHP = 30;
+            playerDM = 30;
+        }
+        if (IntManager.insTance.character == 5)
+        {
+            playerHP = 40;
+            playerDM = 35;
+        }
+        if (IntManager.insTance.character == 6)
+        {
+            playerHP = 40;
+            playerDM = 40;
+        }
         scoreMG = GameObject.Find("ScoreManager");
     }
 	void Update ()
@@ -177,6 +213,8 @@ public class PlayerScript : MonoBehaviour {
                 bulletMG[2].SetActive(false);
                 bulletMG[3].SetActive(false);
                 bulletMG[4].SetActive(false);
+                bulletMG[5].SetActive(false);
+                bulletMG[6].SetActive(false);
                 fireMG[0].GetComponent<FireManager>().fireB2 = false;
                 fireMG[1].GetComponent<FireManager>().fireB2 = false;
                 fireMG[2].GetComponent<FireManager>().fireB2 = false;
@@ -185,7 +223,7 @@ public class PlayerScript : MonoBehaviour {
                     hyperMode = false;
                     if(hyperMode==false)
                     {
-                        this.GetComponent<PlayerMoving>().playerSpeed = 6f;
+                        this.GetComponent<PlayerMoving>().playerSpeed = 5.5f;
                         coolT3 = 0;
                         hyperBK[0].SetActive(false);
                         hyperBK[1].SetActive(false);
@@ -255,61 +293,73 @@ public class PlayerScript : MonoBehaviour {
         if (col.gameObject.tag == "Enemy")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Enemy2")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Enemy3")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Enemy4")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Enemy5")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "BossBT")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "BossBT2")
         {
             playerHP -= 20;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "BossBT3")
         {
             playerHP -= 20;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "BossBT4")
         {
             playerHP -= 30;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "EnemyBullet")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "EnemyBullet2")
         {
             playerHP -= 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[1]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Fire")
         {
             playerHP -= 20;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[0]);
             Instantiate(bombEFT, transform.position, transform.rotation);
         }
         if (col.gameObject.tag == "Multi")
@@ -329,10 +379,12 @@ public class PlayerScript : MonoBehaviour {
         if (col.gameObject.tag == "Coin")
         {
             ScoreManager.instance.coinSC += 5;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[5]);
         }
         if (col.gameObject.tag == "Topaz")
         {
             ScoreManager.instance.coinSC += 10;
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[5]);
         }
         if (col.gameObject.tag == "PowerItem")
         {

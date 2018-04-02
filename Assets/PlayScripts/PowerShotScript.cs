@@ -14,6 +14,7 @@ public class PowerShotScript : MonoBehaviour {
         {
             coolTime = 0;
             Instantiate(bullet, transform.position, transform.rotation);
+            AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[6]);
         }
     }
 }

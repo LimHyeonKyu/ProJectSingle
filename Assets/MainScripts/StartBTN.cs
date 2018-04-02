@@ -6,18 +6,14 @@ public class StartBTN : MonoBehaviour {
 
     public GameObject wing ;
     public GameObject fill;
-    public int wingCT = 0;
+    public GameObject wingIcon;
     public float coolTimes;
     public float resPawnTimes;
     public bool startApp = false;
 	
     void Start()
     {
-        LoadedWing();
-        if(wingCT<=0)
-        {
-            wingCT = 10;
-        }
+
     }
 	void Update ()
     {
@@ -35,31 +31,22 @@ public class StartBTN : MonoBehaviour {
                 Application.LoadLevel(2);
             }
         }
-        if(wingCT<0)
+        if(wingIcon.GetComponent<GoldCount>().wingCt < 0)
         {
-            wingCT = 0;
+            wingIcon.GetComponent<GoldCount>().wingCt = 0;
         }
-        wing.GetComponent<UILabel>().text = wingCT.ToString();
-        SaveWing();
 	}
     public void StartButton()
     {
-        if(wingCT>0)
+        AudioController.iNstance.PlaySFX(AudioController.iNstance.audioClip[2]);
+        if (wingIcon.GetComponent<GoldCount>().wingCt > 0)
         {
             startApp = true;
-            wingCT -= 1;
+            wingIcon.GetComponent<GoldCount>().wingCt -= 1;
         }
-        if(wingCT<0)
+        if(wingIcon.GetComponent<GoldCount>().wingCt < 0)
         {
             startApp = false;
         }
-    }
-    void SaveWing()
-    {
-        PlayerPrefs.SetInt("wing", wingCT);
-    }
-    void LoadedWing()
-    {
-        wingCT = PlayerPrefs.GetInt("wing", wingCT);
     }
 }

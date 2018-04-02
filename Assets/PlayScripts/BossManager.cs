@@ -18,10 +18,10 @@ public class BossManager : MonoBehaviour {
         bossObj[1].GetComponent<BossScript>().hitSC = 20;
         bossObj[2].GetComponent<BossScript>().hitSC = 30;
         bossObj[3].GetComponent<BossScript>().hitSC = 40;
-        bossObj[0].GetComponent<BossScript>().bossHP = 1000;
-        bossObj[1].GetComponent<BossScript>().bossHP = 1200;
-        bossObj[2].GetComponent<BossScript>().bossHP = 1500;
-        bossObj[3].GetComponent<BossScript>().bossHP = 2200;
+        bossObj[0].GetComponent<BossScript>().bossHP = 2500;
+        bossObj[1].GetComponent<BossScript>().bossHP = 3000;
+        bossObj[2].GetComponent<BossScript>().bossHP = 4000;
+        bossObj[3].GetComponent<BossScript>().bossHP = 5000;
     }
 
     void Update ()

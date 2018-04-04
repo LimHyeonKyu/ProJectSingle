@@ -95,19 +95,19 @@ public class BossScript : MonoBehaviour {
                     Instantiate(iTem[0], transform.position, transform.rotation);
                     Instantiate(iTem[0], transform.position, transform.rotation);
                 }
-                if (c <= 78 && c >= 58)
+                if (c <= 78 && c >= 63)
                 {
                     Instantiate(iTem[1], transform.position, transform.rotation);
                     Instantiate(iTem[1], transform.position, transform.rotation);
                     Instantiate(iTem[1], transform.position, transform.rotation);
                 }
-                if (c <= 47 && c >= 27)
+                if (c <= 47 && c >= 37)
                 {
                     Instantiate(iTem[2], transform.position, transform.rotation);
                     Instantiate(iTem[2], transform.position, transform.rotation);
                     Instantiate(iTem[2], transform.position, transform.rotation);
                 }
-                if(c<=26&& c>=1)
+                if(c<=26&& c>=18)
                 {
                     Instantiate(iTem[3], transform.position, transform.rotation);
                     Instantiate(iTem[3], transform.position, transform.rotation);

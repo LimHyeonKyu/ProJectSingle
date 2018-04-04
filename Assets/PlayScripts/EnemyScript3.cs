@@ -45,7 +45,7 @@ public class EnemyScript3 : MonoBehaviour {
                 {
                     Instantiate(iteM[0], transform.position, transform.rotation);
                 }
-                if (b <= 70 && b >= 50)
+                if (b <= 70 && b >= 55)
                 {
                     Instantiate(iteM[1], transform.position, transform.rotation);
                 }
@@ -53,7 +53,7 @@ public class EnemyScript3 : MonoBehaviour {
                 {
                     Instantiate(iteM[2], transform.position, transform.rotation);
                 }
-                if (b <= 16 && b >= 1)
+                if (b <= 16 && b >= 8)
                 {
                     Instantiate(iteM[3], transform.position, transform.rotation);
                 }

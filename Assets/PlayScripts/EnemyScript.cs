@@ -39,7 +39,7 @@ public class EnemyScript : MonoBehaviour {
             {
                 Instantiate(itemIns[0], transform.position, transform.rotation);
             }
-            if (i <= 70 && i >= 50)
+            if (i <= 70 && i >= 55)
             {
                 Instantiate(itemIns[1], transform.position, transform.rotation);
             }
@@ -47,7 +47,7 @@ public class EnemyScript : MonoBehaviour {
             {
                 Instantiate(itemIns[2], transform.position, transform.rotation);
             }
-            if(i<=16&&i>=0)
+            if(i<=16&&i>=8)
             {
                 Instantiate(itemIns[3], transform.position, transform.rotation);
             }
@@ -162,13 +162,17 @@ public class EnemyScript : MonoBehaviour {
             {
                 Instantiate(itemIns[0], transform.position, transform.rotation);
             }
-            if (i <= 70 && i >= 50)
+            if (i <= 70 && i >= 55)
             {
                 Instantiate(itemIns[1], transform.position, transform.rotation);
             }
             if (i <= 30 && i >= 20)
             {
                 Instantiate(itemIns[2], transform.position, transform.rotation);
+            }
+            if (i <= 16 && i >= 8)
+            {
+                Instantiate(itemIns[3], transform.position, transform.rotation);
             }
             int d = Random.Range(0, 2);
             if (d >= 1)
@@ -190,13 +194,17 @@ public class EnemyScript : MonoBehaviour {
             {
                 Instantiate(itemIns[0], transform.position, transform.rotation);
             }
-            if (i <= 70 && i >= 50)
+            if (i <= 70 && i >= 55)
             {
                 Instantiate(itemIns[1], transform.position, transform.rotation);
             }
             if (i <= 30 && i >= 20)
             {
                 Instantiate(itemIns[2], transform.position, transform.rotation);
+            }
+            if (i <= 16 && i >= 8)
+            {
+                Instantiate(itemIns[3], transform.position, transform.rotation);
             }
             int d = Random.Range(0, 2);
             if (d >= 1)

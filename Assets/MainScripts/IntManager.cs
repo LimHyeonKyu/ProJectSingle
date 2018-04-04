@@ -11,7 +11,7 @@ public class IntManager : MonoBehaviour {
         {
             if (_insTance == null)
             {
-                _insTance = FindObjectOfType(typeof(ScoreManager)) as IntManager;
+                _insTance = FindObjectOfType(typeof(IntManager)) as IntManager;
             }
             return _insTance;
         }
